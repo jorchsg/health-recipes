@@ -1,9 +1,12 @@
 import React from 'react';
+import DefaultPage from '../layouts/DefaultPage';
 
 const Register = () => {
     return (
         <>
-         <h1>Register</h1>   
+            <DefaultPage>
+                
+            </DefaultPage>
         </>
     )
 }
