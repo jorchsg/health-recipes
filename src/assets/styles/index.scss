@@ -6,9 +6,17 @@ html {
 
 html body {
   background: var(--color-bg);
-  max-width: var(--breakpoint-xxl);
-  margin: 0 auto;
+  margin: 0;
   box-sizing: border-box;
+}
+
+.container {
+    // Don't allow to use all Screen
+    max-width: 1400px;
+    // Create an auto margin
+    width: 90%;
+    // Center Content
+    margin: 0 auto;
 }
 
 //Global Variables

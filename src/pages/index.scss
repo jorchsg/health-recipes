@@ -1,3 +1,16 @@
+.home_page_container {
+    background: linear-gradient(143.41deg, #F77F00 -2.86%, #FCBF49 112.3%);
+
+    .home_page_content{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+        img {
+            width: 100%;
+        }
+    }
+}
+
 .register_container{
     display: grid;
     align-items: center;
