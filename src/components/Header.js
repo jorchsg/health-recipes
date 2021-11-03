@@ -15,7 +15,7 @@ const Header = () => {
                 </div>
                 <div className="header_right">
                     <div className="header_right_text">
-                        <span>Already have an acount? </span>
+                        <span>Already have an account? </span>
                     </div>
                     <div className="header_right_button">
                         <button>

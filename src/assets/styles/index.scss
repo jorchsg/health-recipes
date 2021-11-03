@@ -8,6 +8,7 @@ html body {
   background: var(--color-bg);
   max-width: var(--breakpoint-xxl);
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 //Global Variables
@@ -48,6 +49,7 @@ html body {
   --color-yellow: #FCBF49;
   --color-lemon: #EAE2B7;
   --color-white: #FAFAFA;
+  --color-gray: #C4CACD;
   --color-bg: #E5E5E5;
 
   //Spacing

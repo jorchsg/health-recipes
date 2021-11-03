@@ -1,0 +1,83 @@
+.register_container{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    &_header {
+        h1 {
+            text-align: left;
+        }
+        margin-top: 144px;
+        margin-bottom: 24px;
+    }
+
+    &_content{
+        display: grid;
+        align-items: end;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 32px;
+
+        &_col_form {
+            
+            width: 320px;
+
+            span {
+                color: var(--color-gray);
+            }
+            
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                padding: 32px 16px;
+                border-radius: 16px;
+                border: 3px solid var(--color-blue-navy);
+
+                .header_form {
+                    margin-bottom: 10px;
+                }
+
+                .field_form {
+                    label {
+                        color:var(--color-blue-navy);
+                        font-weight: 600;
+                        font-size: 14px;
+                        line-height: 17px;
+                    }
+                    
+                    input {
+                        margin-top: 6px;
+                        background: var(--color-white);
+                        padding: 10px 16px;
+                        color: var(--color-gray);
+                        border: none;
+                        width: calc(100% - 32px);
+                        border-radius: 8px;
+                    }
+                }
+
+                .button-wrapper {
+                    display: flex;
+                    justify-content: right;
+                    .btn-continue {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        background: var(--color-linear);
+                        padding: 10px 16px;
+                        border-radius: 50px;
+                        border: none;
+                        width: 148px;
+                        cursor: pointer;
+                        font-size: 14px;
+                        font-weight: 600;
+                        color: var(--color-blue-navy);
+                    }
+                }
+            }
+
+        }
+    }
+    
+
+}
