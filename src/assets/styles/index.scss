@@ -1,0 +1,78 @@
+html {
+  font-size: var(--f-default-text-size);
+  font-weight: var(--f-weight-light);
+  font-family: 'Montserrat', sans-serif;
+}
+
+html body {
+  background: var(--color-bg);
+  max-width: var(--breakpoint-xxl);
+  margin: 0 auto;
+}
+
+//Global Variables
+:root {
+
+  h1, h2, h2, h4, h5, h6 {
+    margin: 0;
+    color: var(--color-blue-navy);
+  }
+
+  p {
+    margin: 0;
+    color: var(--color-blue-navy);
+  }
+
+  b {
+    font-weight: var(--f-semi-bold);
+  }
+  //Texts:
+  //--f-default-text-font: "Open Sans";
+  --f-default-text-size: 14px;
+
+  //Fonts:
+  --f-size-small: 12px;
+  --f-size-medium: 16px;
+  --f-size-large: 18px;
+
+  --f-weight-light: 300;
+  --f-weight-normal: 400;
+  --f-weight-semi-bold: 600;
+  --f-weight-bold: 700;
+
+  //Colors:
+  --color-linear: linear-gradient(rgba(247, 127, 0));
+  --color-blue-navy: #003049;
+  --color-red: #D62828;
+  --color-orange: #F77F00;
+  --color-yellow: #FCBF49;
+  --color-lemon: #EAE2B7;
+  --color-white: #FAFAFA;
+  --color-bg: #E5E5E5;
+
+  //Spacing
+  --spacing-01: 8px;
+  --spacing-02: 12px;
+  --spacing-03: 16px;
+  --spacing-04: 24px;
+  --spacing-05: 28px;
+  --spacing-06: 32px;
+  --spacing-07: 40px;
+  --spacing-08: 44px;
+  --spacing-09: 64px;
+  --spacing-10: 76px;
+  --spacing-11: 80px;
+
+  //Paddings
+  --default-padding: var(--spacing-03);
+  --default-border-radius: var(--spacing-01);
+
+  //Breakpoints
+  --breakpoint-xxs: 0;
+  --breakpoint-xs: 400px;
+  --breakpoint-s: 576px;
+  --breakpoint-m: 768px;
+  --breakpoint-l: 992px;
+  --breakpoint-xl: 1160px;
+  --breakpoint-xxl: 1440px;
+}
