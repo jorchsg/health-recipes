@@ -4,7 +4,10 @@ import Header from '../components/Header'
 const DefaultPage = () => {
     return (
         <>
-            <Header />
+            <Header
+                title='Already have an acount?'
+                labelButton='Login'
+            />
         </>
     )
 }

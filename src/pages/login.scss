@@ -1,0 +1,15 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+    
+    &_header{
+        margin-bottom: 24px;
+    }
+    
+    &_content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}

@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../components/Header';
 import FoodHome from '../assets/images/food_home.png';
+import './home.scss';
 
 const Home = () => {
     return (

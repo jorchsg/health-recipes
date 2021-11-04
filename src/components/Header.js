@@ -2,24 +2,31 @@ import React from 'react'
 import IconLogo from '../assets/images/icon-smartwatch-large.png'
 import './header.scss';
 
-const Header = () => {
+const Header = (props) => {
+
+    //Props
+    const {
+        title = "already have an account?",
+        labelButton = "login"
+    } = props;
+
     return (
         <>
             <header className="header_container">
                 <div className="header_left">
                     <img
-                        src={IconLogo}
+                        src={ IconLogo }
                         alt="icon smartwatch"
                     />
                     <span>Healthy Recipes</span>
                 </div>
                 <div className="header_right">
                     <div className="header_right_text">
-                        <span>Already have an account? </span>
+                        <span>{ title }</span>
                     </div>
                     <div className="header_right_button">
                         <button>
-                            Login
+                            { labelButton }
                         </button>
                     </div>
                 </div>

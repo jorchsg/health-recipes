@@ -2,13 +2,13 @@ import React from 'react';
 import DefaultPage from '../layouts/DefaultPage';
 import SecureImg from '../assets/images/secure_signup.png';
 import ArrowRightCircle from '../assets/images/arrow-right-circle.svg';
-import './index.scss'
+import './register.scss';
 
 const Register = () => {
     return (
         <>
             <DefaultPage></DefaultPage>
-            <div className="register_container">
+            <div className="register_container container">
 
                 <div className="register_container_header">
                     <h1>Sign Up</h1>
