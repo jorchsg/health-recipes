@@ -1,0 +1,48 @@
+.card {
+  &__content {
+    background: var(--color-white);
+    border-radius: 4px;
+    &__image {
+  
+    }
+    &__container {
+      padding: 14px 16px;
+      &__title {
+      
+      }     
+    }
+  }
+  &__calories-info {
+    &__content {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5px;
+      padding-bottom: 24px;
+      &__category {
+        font-size: 12px;
+        line-height: 14.63px;
+        background: rgba(252, 191, 73, 0.4);        
+        border-radius: 4px;        
+        padding: 4px;
+        height: fit-content;
+      }
+    }
+  }  
+  &__calories {
+    &__content {
+      display: flex;
+      gap: 2px;
+      align-items: center;
+      h4 {
+        height: fit-content;
+        font-size: 12px;
+        line-height: 14.63px;
+        font-weight: 500;
+      }
+      img {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  } 
+}

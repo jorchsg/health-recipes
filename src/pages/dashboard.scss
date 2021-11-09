@@ -1,0 +1,40 @@
+.dashboard {
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 16px;
+    padding: 0 128px;
+    padding-bottom: 100px;
+
+    .reports {
+      margin-top: 52px;
+    }
+    .suggestions {
+      margin-top: 78px;
+    }
+  }
+  &__title {
+    grid-column: 1 / 13;
+    font-size: 36px;
+    list-style: 43.88px;
+    margin-bottom: 24px !important;
+  }
+  &__cards {
+    &__content {
+      margin-top: 36px;
+      display: grid;
+      grid-auto-flow: column;
+      grid-column: 1 / 13;
+      gap: 24px;
+    }
+  }
+  &__weekly_chart {
+    display: grid;
+    justify-content: center;
+    grid-column: 3 / 8;
+    background: var(--color-white);
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 12px;
+  }
+}
