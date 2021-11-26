@@ -1,5 +1,5 @@
 import React from 'react';
-import DefaultPage from '../layouts/DefaultPage';
+import Header from '../components/Header';
 import SecureImg from '../assets/images/secure_signup.png';
 import ArrowRightCircle from '../assets/images/arrow-right-circle.svg';
 import './register.scss';
@@ -7,7 +7,12 @@ import './register.scss';
 const Register = () => {
     return (
         <>
-            <DefaultPage></DefaultPage>
+            <Header
+                title='Already have an acount?'
+                labelButton='Login'
+                linkTo='/login'
+            >
+            </Header>
             <div className="register_container container">
 
                 <div className="register_container_header">

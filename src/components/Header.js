@@ -1,14 +1,12 @@
 import React from 'react'
 import IconLogo from '../assets/images/icon-smartwatch-large.png'
+import { Link } from 'react-router-dom';
 import './header.scss';
 
 const Header = (props) => {
 
     //Props
-    const {
-        title = "already have an account?",
-        labelButton = "login"
-    } = props;
+    const { title, labelButton, linkTo } = props;
 
     return (
         <>
@@ -25,9 +23,11 @@ const Header = (props) => {
                         <span>{ title }</span>
                     </div>
                     <div className="header_right_button">
-                        <button>
-                            { labelButton }
-                        </button>
+                        <Link to={linkTo}>
+                            <button>
+                                { labelButton }
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </header>
