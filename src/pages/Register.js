@@ -62,8 +62,8 @@ const Register = () => {
                                 <label htmlFor="email">E-mail Address</label>
                                 <input
                                     type="email"
-                                    value={email}
                                     name="email"
+                                    value={email}
                                     onChange={onChange}
                                 />
                             </div>
@@ -74,15 +74,17 @@ const Register = () => {
                                     name="password"
                                     onChange={onChange}
                                     value={password}
+                                    autoComplete="on"
                                 />
                             </div>
                             <div className="field_form">
                                 <label htmlFor="confirm">Confirm Password</label>
                                 <input
-                                    type="confirm"
+                                    type="password"
                                     name="confirm"
                                     value={confirm}
                                     onChange={onChange}
+                                    autoComplete="on"
                                 />
                             </div>
                             <div className="field_form">
@@ -118,7 +120,7 @@ const Register = () => {
                                     type="text"
                                     name="gender"
                                     value={gender}
-                                    onChane={onChange}
+                                    onChange={onChange}
                                 />
                             </div>
                             <div className="button-wrapper">

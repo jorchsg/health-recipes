@@ -4,7 +4,7 @@ import DailyCalories from '../components/DailyCalories.js';
 import "./dashboard.scss";
 import Card from '../components/Card.js';
 import FoodCard from '../assets/images/food_card.png';
-import { BarChart, Legend, XAxis, YAxis, Tooltip, CartesianGrid, Bar} from 'recharts';
+import { BarChart, Legend, XAxis, YAxis, Tooltip, Bar} from 'recharts';
 
 const Dashboard = () => {
     const Weeklydata = [
