@@ -1,10 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import SecureImg from '../assets/images/secure_signup.png';
 import ArrowRightCircle from '../assets/images/arrow-right-circle.svg';
 import './register.scss';
 
 const Register = () => {
+
+    const [user, saveUser] = useState({
+        name: '',
+        email: '',
+        password: '',
+        confirm: '',
+        age: '',
+        height: '',
+        weight: '',
+        gender: '',
+    });
+
+    const { name, email, password, age, height, weight, gender, confirm } = user;
+
+    const onChange = e => {
+        saveUser({
+            ...user,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const onSubmit = e => {
+        e.preventDefault();
+    };
+
     return (
         <>
             <Header
@@ -20,7 +45,7 @@ const Register = () => {
 
                 <div className="register_container_content">
                     <div className="register_container_content_col_form">
-                        <form action="">
+                        <form action="" onSubmit={onSubmit}>
                             <div className="header_form">
                                 <p>Registration</p>
                             </div>
@@ -29,13 +54,17 @@ const Register = () => {
                                 <input
                                     type="text"
                                     name="name"
+                                    value={name}
+                                    onChange={onChange}
                                 />
                             </div>
                             <div className="field_form">
                                 <label htmlFor="email">E-mail Address</label>
                                 <input
                                     type="email"
+                                    value={email}
                                     name="email"
+                                    onChange={onChange}
                                 />
                             </div>
                             <div className="field_form">
@@ -43,6 +72,17 @@ const Register = () => {
                                 <input
                                     type="password"
                                     name="password"
+                                    onChange={onChange}
+                                    value={password}
+                                />
+                            </div>
+                            <div className="field_form">
+                                <label htmlFor="confirm">Confirm Password</label>
+                                <input
+                                    type="confirm"
+                                    name="confirm"
+                                    value={confirm}
+                                    onChange={onChange}
                                 />
                             </div>
                             <div className="field_form">
@@ -50,6 +90,8 @@ const Register = () => {
                                 <input
                                     type="number"
                                     name="age"
+                                    value={age}
+                                    onChange={onChange}
                                 />
                             </div>
                             <div className="field_form">
@@ -57,6 +99,8 @@ const Register = () => {
                                 <input
                                     type="text"
                                     name="height"
+                                    value={height}
+                                    onChange={onChange}
                                 />
                             </div>
                             <div className="field_form">
@@ -64,6 +108,8 @@ const Register = () => {
                                 <input
                                     type="text"
                                     name="weight"
+                                    value={weight}
+                                    onChange={onChange}
                                 />
                             </div>
                             <div className="field_form">
@@ -71,10 +117,12 @@ const Register = () => {
                                 <input
                                     type="text"
                                     name="gender"
+                                    value={gender}
+                                    onChane={onChange}
                                 />
                             </div>
                             <div className="button-wrapper">
-                                <button className="btn-continue">
+                                <button onSubmit={onSubmit} className="btn-continue">
                                     Continue
                                     <img src={ArrowRightCircle} alt="arrow-right"
                                 /></button>
