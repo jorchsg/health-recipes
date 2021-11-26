@@ -3,10 +3,9 @@
         h1 {
             text-align: center;
         }
-        margin-top: 144px;
+        margin-top: 48px;
         margin-bottom: 24px;
     }
-    
     &_content{
         display: grid;
         align-items: center;
@@ -14,9 +13,7 @@
         grid-template-columns: 1fr 1fr;
         column-gap: 32px;
         &_col_form {
-            
             width: 320px;
-
             span {
                 color: var(--color-gray);
             }
@@ -74,6 +71,4 @@
 
         }
     }
-    
-
 }

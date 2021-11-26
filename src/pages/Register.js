@@ -13,7 +13,7 @@ const Register = () => {
                 linkTo='/login'
             >
             </Header>
-            <div className="register_container container box">
+            <div className="register_container container">
                 <div className="register_container_header">
                     <h1>Sign Up</h1>
                 </div>
@@ -22,20 +22,13 @@ const Register = () => {
                     <div className="register_container_content_col_form">
                         <form action="">
                             <div className="header_form">
-                                <p>Registration <span> {'>'} Health Information</span></p>
+                                <p>Registration</p>
                             </div>
                             <div className="field_form">
-                                <label htmlFor="fullname">Full Name</label>
+                                <label htmlFor="name">Name</label>
                                 <input
                                     type="text"
-                                    name="fullname"
-                                />
-                            </div>
-                            <div className="field_form">
-                                <label htmlFor="username">Username</label>
-                                <input
-                                    type="text"
-                                    name="username"
+                                    name="name"
                                 />
                             </div>
                             <div className="field_form">
@@ -50,6 +43,34 @@ const Register = () => {
                                 <input
                                     type="password"
                                     name="password"
+                                />
+                            </div>
+                            <div className="field_form">
+                                <label htmlFor="age">Age</label>
+                                <input
+                                    type="number"
+                                    name="age"
+                                />
+                            </div>
+                            <div className="field_form">
+                                <label htmlFor="height">Height</label>
+                                <input
+                                    type="text"
+                                    name="height"
+                                />
+                            </div>
+                            <div className="field_form">
+                                <label htmlFor="weight">Weight</label>
+                                <input
+                                    type="text"
+                                    name="weight"
+                                />
+                            </div>
+                            <div className="field_form">
+                                <label htmlFor="gender">Gender</label>
+                                <input
+                                    type="text"
+                                    name="gender"
                                 />
                             </div>
                             <div className="button-wrapper">
