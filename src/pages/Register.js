@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState} from 'react';
 import Header from '../components/Header';
 import SecureImg from '../assets/images/secure_signup.png';
 import ArrowRightCircle from '../assets/images/arrow-right-circle.svg';
 import './register.scss';
+import AlertContext from '../context/alerts/alertContext';
 
 const Register = () => {
+
+    //Extract Context
+    const alertContext = useContext(AlertContext);
+    const { alert, showAlert } = alertContext;
 
     const [user, saveUser] = useState({
         name: '',
@@ -28,8 +33,27 @@ const Register = () => {
 
     const onSubmit = e => {
         e.preventDefault();
-    };
+        if (
+            name.trim() === '' || email.trim() === '' || password.trim() === '' ||
+            age.trim() === '' || height.trim() === '' || weight.trim() === '' ||
+            gender.trim() === '' || confirm.trim() === ''
+        ) {
+            showAlert('All Fields Are Required', 'alert-error');
+            return;
+        }
 
+        if (password.length < 8) {
+            showAlert('The minimun password characters required is 8', 'alert-error');
+            return;
+        }
+
+        if (password !== confirm) {
+            showAlert('Passwords are not the same', 'alert-error');
+            return;
+        }
+
+        //showAlert('Thanks For Sign Up')
+    };
     return (
         <>
             <Header
@@ -124,7 +148,7 @@ const Register = () => {
                                 />
                             </div>
                             <div className="button-wrapper">
-                                <button onSubmit={onSubmit} className="btn-continue">
+                                <button onClick={onSubmit} className="btn-continue">
                                     Continue
                                     <img src={ArrowRightCircle} alt="arrow-right"
                                 /></button>
@@ -133,6 +157,7 @@ const Register = () => {
                     </div>
                     <div className="register_container_content_col_form_image">
                         <img src={SecureImg} alt="Secure" />
+                        {alert ? (<div className={`alert ${alert.category}`}>{alert.msg}</div>) : null}
                     </div>
                 </div>
             </div>

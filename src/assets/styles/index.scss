@@ -23,6 +23,20 @@ html body {
   height: calc(100vh) ;
 }
 
+.alert {
+  padding: 20px;
+  text-align: center;
+}
+.alert-ok {
+  background-color: rgb(109,211,109);
+  color: rgb(2,103,2);
+}
+
+.alert-error {
+  background-color: rgb(230,78,78);
+  color: var(--color-white);
+}
+
 //Global Variables
 :root {
 
