@@ -1,12 +1,35 @@
 .home_page_container {
     background: linear-gradient(143.41deg, #F77F00 -2.86%, #FCBF49 112.3%);
-
+    height: calc(100vh - 70px); 
     .home_page_content{
         display: grid;
         grid-template-columns: 50% 50%;
         align-items: center;
-        img {
-            width: 100%;
+        &_left{
+
+            h1 {
+                font-style: normal;
+                font-weight: bold;
+                font-size: 48px;
+                line-height: 59px;
+                margin-bottom: 52px;
+                font-weight: 700;
+            }
+            a {
+                background: #003049;
+                border-radius: 50px;
+                padding: 12px 24px;
+                color: #fff;
+                text-decoration: none;
+                cursor: pointer;
+                border: none;
+            }
+        }
+        &_right {
+            img {
+                width: 100%;
+                height: auto;
+            }
         }
     }
 }

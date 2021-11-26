@@ -6,18 +6,24 @@ import './header.scss';
 const Header = (props) => {
 
     //Props
-    const { title, labelButton, linkTo } = props;
+    const {
+        title = '',
+        labelButton = 'Login',
+        linkTo='/login'
+    } = props;
 
     return (
         <>
             <header className="header_container">
-                <div className="header_left">
-                    <img
-                        src={ IconLogo }
-                        alt="icon smartwatch"
-                    />
-                    <span>Healthy Recipes</span>
-                </div>
+                <Link to="/"> 
+                    <div className="header_left">
+                            <img
+                                src={ IconLogo }
+                                alt="icon smartwatch"
+                            />
+                        <span>Healthy Recipes</span>
+                    </div>
+                </Link>
                 <div className="header_right">
                     <div className="header_right_text">
                         <span>{ title }</span>
