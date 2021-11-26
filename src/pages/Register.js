@@ -13,8 +13,7 @@ const Register = () => {
                 linkTo='/login'
             >
             </Header>
-            <div className="register_container container">
-
+            <div className="register_container container box">
                 <div className="register_container_header">
                     <h1>Sign Up</h1>
                 </div>

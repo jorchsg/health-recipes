@@ -12,11 +12,15 @@ html body {
 
 .container {
     // Don't allow to use all Screen
-    max-width: 1400px;
+    max-width: 1440px;
     // Create an auto margin
     width: 90%;
     // Center Content
     margin: 0 auto;
+}
+
+.box {
+  height: calc(100vh - 70px) ;
 }
 
 //Global Variables

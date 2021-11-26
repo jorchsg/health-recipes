@@ -30,7 +30,7 @@ const Login = () => {
         labelButton='Sign Up'
         linkTo='/register'
       > </Header>
-      <div className="login container">
+      <div className="login container box">
         <div className="login_header">
           <h1>Login</h1>
         </div>
