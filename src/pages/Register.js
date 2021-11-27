@@ -4,12 +4,16 @@ import SecureImg from '../assets/images/secure_signup.png';
 import ArrowRightCircle from '../assets/images/arrow-right-circle.svg';
 import './register.scss';
 import AlertContext from '../context/alerts/alertContext';
+import AuthContext from '../context/authentication/authContext';
 
 const Register = () => {
 
-    //Extract Context
+    //Extract Contexts
     const alertContext = useContext(AlertContext);
     const { alert, showAlert } = alertContext;
+
+    const authContext = useContext(AuthContext);
+    const { registerUser } = authContext;
 
     const [user, saveUser] = useState({
         name: '',
@@ -52,7 +56,15 @@ const Register = () => {
             return;
         }
 
-        //showAlert('Thanks For Sign Up')
+        registerUser({
+            name,
+            email,
+            password,
+            age,
+            height,
+            weight,
+            gender,
+        }); 
     };
     return (
         <>

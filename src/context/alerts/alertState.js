@@ -20,13 +20,13 @@ const AlertState = props => {
                 category
             }
         });
+        //Hide Alert after 8seconds
+        setTimeout(() => {
+            dispatch({
+                type: HIDE_ALERT,
+            });
+        }, 8000);
     };
-    //Hide Alert after 8seconds
-    setTimeout(() => {
-        dispatch({
-            type: HIDE_ALERT,
-        });
-    }, 8000);
 
     return (
         <alertContext.Provider
