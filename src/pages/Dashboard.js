@@ -11,7 +11,7 @@ import AuthContext from '../context/authentication/authContext.js';
 const Dashboard = () => {
 
     const authContext = useContext(AuthContext);
-    const { getAuthUser } = authContext;
+    const { getAuthUser, user } = authContext;
 
     useEffect(() => {
         getAuthUser();
@@ -20,10 +20,11 @@ const Dashboard = () => {
     return (
         <>
             <Header
-                title=''
+                title={user?.name}
                 labelButton='Log out'
             />
             <div className="dashboard__content">
+                {/* { user ?  : null} */}
                 <h1 className="dashboard__title reports">Reports</h1>
                 <DailyCalories
                     calories="300"

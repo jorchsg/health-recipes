@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import IconLogo from '../assets/images/icon-smartwatch-large.png'
 import { Link } from 'react-router-dom';
+import AuthContext from '../context/authentication/authContext';
 import './header.scss';
 
 const Header = (props) => {
+
+    const authContext = useContext(AuthContext);
+    const { getAuthUser, logOut } = authContext;
+
+    useEffect(() => {
+        getAuthUser();
+    }, [])
 
     //Props
     const {
@@ -30,7 +38,9 @@ const Header = (props) => {
                     </div>
                     <div className="header_right_button">
                         <Link to={linkTo}>
-                            <button>
+                            <button
+                                onClick={() => logOut()}
+                            >
                                 { labelButton }
                             </button>
                         </Link>
