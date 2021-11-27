@@ -19,6 +19,7 @@ import AuthState from './context/authentication/authState';
 
 //Token
 import tokenAuth from './config/tokenAuth';
+import PrivateRoute from './routes/PivateRoute';
 
 //Validate Token
 const token = localStorage.getItem('token');
@@ -36,9 +37,9 @@ function App() {
               <Route path="/" exact component={Home}></Route>
               <Route path="/login" exact component={Login}></Route>
               <Route path="/register" exact component={Register}></Route>
-              <Route path="/dashboard" exact component={Dashboard}></Route>
-              <Route path="/my-meals" exact component={MyMeals}></Route>
-              <Route path="/profile" exact component={Profile}></Route>
+              <PrivateRoute path="/dashboard" exact component={Dashboard}></PrivateRoute>
+              <PrivateRoute path="/my-meals" exact component={MyMeals}></PrivateRoute>
+              <PrivateRoute path="/profile" exact component={Profile}></PrivateRoute>
             </Switch>
           </Router>
         </AuthState>

@@ -39,7 +39,7 @@ const Header = (props) => {
                     <div className="header_right_button">
                         <Link to={linkTo}>
                             <button
-                                onClick={() => logOut()}
+                                //onClick={() => logOut()}
                             >
                                 { labelButton }
                             </button>
