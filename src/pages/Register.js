@@ -1,4 +1,4 @@
-import React, { useContext, useState} from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Header from '../components/Header';
 import SecureImg from '../assets/images/secure_signup.png';
 import ArrowRightCircle from '../assets/images/arrow-right-circle.svg';
@@ -6,14 +6,14 @@ import './register.scss';
 import AlertContext from '../context/alerts/alertContext';
 import AuthContext from '../context/authentication/authContext';
 
-const Register = () => {
+const Register = (props) => {
 
     //Extract Contexts
     const alertContext = useContext(AlertContext);
     const { alert, showAlert } = alertContext;
 
     const authContext = useContext(AuthContext);
-    const { registerUser } = authContext;
+    const { message, authenticated, registerUser } = authContext;
 
     const [user, saveUser] = useState({
         name: '',
@@ -66,6 +66,16 @@ const Register = () => {
             gender,
         }); 
     };
+
+    useEffect(() => {
+        if (authenticated) {
+            props.history.push('/dashboard')
+        }
+        if (message) {
+            showAlert(message.msg, message.category);
+        }
+    }, [message, authenticated, props.history] )
+
     return (
         <>
             <Header

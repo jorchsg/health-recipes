@@ -3,6 +3,7 @@ import AuthContext from './authContext';
 import AuthReducer from './authReducer';
 //import axiosClient from '../../config/axios';
 import axios from 'axios';
+import tokenAuth from '../../config/tokenAuth';
 
 import {
     REGISTER_SUCCESS,
@@ -34,7 +35,7 @@ const AuthState = props => {
                 payload: response.data
             });
         } catch (error) {
-            console.log(error.response.data.message);
+            console.error(error.response.data.message);
             const alert = {
                 msg: error.response.data.message,
                 category: 'alert-error'
@@ -44,7 +45,34 @@ const AuthState = props => {
                 payload: alert
             });
         }
+        //Get User
+        getAuthUser();
     }
+
+    const getAuthUser = async () => {
+        const token = localStorage.getItem('token');
+        if (token) {
+            tokenAuth(token);
+        }
+        try {
+            const response = await axios.get(`${url}users/getUser`, {
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            })
+            console.log(response);
+            dispatch({
+                type: GET_USER,
+                payload: response.data.data
+            });
+        } catch (error) {
+            console.error(error.response);
+            dispatch({
+                type: LOGIN_ERROR,
+            });
+        }
+    }
+
     return (
         <AuthContext.Provider
             value={{
