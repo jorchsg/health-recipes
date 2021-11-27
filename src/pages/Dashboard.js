@@ -1,42 +1,22 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import Header from '../components/Header.js';
 import DailyCalories from '../components/DailyCalories.js';
 import "./dashboard.scss";
 import Card from '../components/Card.js';
 import FoodCard from '../assets/images/food_card.png';
-import { BarChart, Legend, XAxis, YAxis, Tooltip, Bar} from 'recharts';
+import { BarChart, Legend, XAxis, YAxis, Tooltip, Bar } from 'recharts';
+import Weeklydata from '../utils/chartData.js';
+import AuthContext from '../context/authentication/authContext.js';
 
 const Dashboard = () => {
-    const Weeklydata = [
-        {
-            "name": "Monday",
-            "calories": 2400,
-        },
-        {
-            "name": "Tuesday",
-            "calories": 1762,
-        },
-        {
-            "name": "Wednesday",
-            "calories": 2095,
-        },
-        {
-            "name": "Thursday",
-            "calories": 2197,
-        },
-        {
-            "name": "Friday",
-            "calories": 2007,
-        },
-        {
-            "name": "Saturday",
-            "calories": 1698,
-        },
-        {
-            "name": "Sunday",
-            "calories": 2200,
-        }
-    ]
+
+    const authContext = useContext(AuthContext);
+    const { getAuthUser } = authContext;
+
+    useEffect(() => {
+        getAuthUser();
+    },[])
+
     return (
         <>
             <Header

@@ -12,8 +12,19 @@ import Login from './pages/Login.js';
 import MyMeals from './pages/MyMeals.js';
 import Dashboard from './pages/Dashboard.js';
 import Profile from './pages/Profile.js';
+
+//Global States
 import AlertState from './context/alerts/alertState';
 import AuthState from './context/authentication/authState';
+
+//Token
+import tokenAuth from './config/tokenAuth';
+
+//Validate Token
+const token = localStorage.getItem('token');
+if (token) {
+  tokenAuth(token);
+}
 
 function App() {
   return (
