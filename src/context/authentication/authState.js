@@ -73,6 +73,23 @@ const AuthState = props => {
         }
     }
 
+    const login = async (data) => {
+        try {
+            const response = await axios.post(`${url}users/login`, data);
+            console.log('Login Response', response);
+        } catch (error) {
+            console.error('Login Error: ', error.response.data.message);
+            const alert = {
+                msg: error.response.data.message,
+                category: 'alert-error'
+            }
+            dispatch({
+                type: LOGIN_ERROR,
+                payload: alert
+            });
+        }
+    }
+
     return (
         <AuthContext.Provider
             value={{
@@ -82,7 +99,8 @@ const AuthState = props => {
                 authenticated: state.authenticated,
                 message: state.message,
                 //Functions
-                registerUser
+                registerUser,
+                login
             }}
         >
             {props.children}

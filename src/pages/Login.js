@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Header from '../components/Header.js';
 import SecureImg from '../assets/images/secure_signup.png';
 import './login.scss';
+import AlertContext from '../context/alerts/alertContext';
+import AuthContext from '../context/authentication/authContext';
+
 
 const Login = () => {
+
+  //Extract Contexts
+  const alertContext = useContext(AlertContext);
+  const { alert, showAlert } = alertContext;
+
+  const authContext = useContext(AuthContext);
+  const { message, authenticated, login } = authContext;
 
   const [user, saveUser ] = useState({
     email: '',
@@ -21,6 +31,12 @@ const Login = () => {
   
   const onSubmit = (e) => {
     e.preventDefault();
+
+    if (email.trim() === '' || password.trim() === '') {
+      showAlert('All Fields Are Required', 'alert-error')
+    };
+
+    login({ email, password });
   };
 
   return (
@@ -40,6 +56,7 @@ const Login = () => {
               className="form"
               onSubmit={onSubmit}
             >
+              {alert ? (<div className={`alert ${alert.category}`}>{alert.msg}</div>) : null}
               <div className="formField">
                 <label htmlFor="email">Email</label>
                 <input
@@ -73,7 +90,6 @@ const Login = () => {
               <img src={SecureImg} alt="Secure" />
           </div>
         </div>
-        
       </div>
     </>
   )
