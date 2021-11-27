@@ -15,6 +15,7 @@ export default (state, action) => {
                 ...state,
                 authenticated: true,
                 message: null,
+                loading: false,
             }
         case LOGIN_ERROR:
         case LOGOUT:
@@ -25,7 +26,8 @@ export default (state, action) => {
                 token: null,
                 message: action.payload,
                 authenticated: null,
-                user: null
+                user: null,
+                loading: false
             }
         case LOGIN_SUCCESS:
             localStorage.setItem('token', action.payload.token);
@@ -33,12 +35,14 @@ export default (state, action) => {
                 ...state,
                 authenticated: true,
                 message: null,
+                loading: false,
             }
         case GET_USER: {
             return {
                 ...state,
                 authenticated: true,
-                user: action.payload
+                user: action.payload,
+                loading: false,
             }
         }
         default:
