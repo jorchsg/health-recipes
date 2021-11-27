@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Header from '../components/Header.js';
 import SecureImg from '../assets/images/secure_signup.png';
 import './login.scss';
@@ -6,7 +6,7 @@ import AlertContext from '../context/alerts/alertContext';
 import AuthContext from '../context/authentication/authContext';
 
 
-const Login = () => {
+const Login = (props) => {
 
   //Extract Contexts
   const alertContext = useContext(AlertContext);
@@ -38,6 +38,15 @@ const Login = () => {
 
     login({ email, password });
   };
+
+ useEffect(() => {
+   if (authenticated) {
+     props.history.push('/dashboard')
+   }
+   if (message) {
+     showAlert(message.msg, message.category);
+   }
+ }, [authenticated, message, props.history])
 
   return (
     <>

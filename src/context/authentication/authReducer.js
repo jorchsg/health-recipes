@@ -23,10 +23,17 @@ export default (state, action) => {
                 token: null,
                 message: action.payload
             }
+        case LOGIN_SUCCESS:
+            localStorage.setItem('token', action.payload.token);
+            return {
+                ...state,
+                authenticated: true,
+                message: null,
+            }
         case LOGIN_ERROR: {
             return {
                 ...state,
-
+                message: action.payload
             }
         }
         case GET_USER: {

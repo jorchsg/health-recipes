@@ -60,7 +60,7 @@ const AuthState = props => {
                     "Authorization": `Bearer ${token}`
                 }
             })
-            console.log(response);
+            console.log('User Auth: ', response);
             dispatch({
                 type: GET_USER,
                 payload: response.data.data
@@ -77,6 +77,11 @@ const AuthState = props => {
         try {
             const response = await axios.post(`${url}users/login`, data);
             console.log('Login Response', response);
+            dispatch({
+                type: LOGIN_SUCCESS,
+                payload: response.data
+            });
+            getAuthUser();
         } catch (error) {
             console.error('Login Error: ', error.response.data.message);
             const alert = {
