@@ -15,6 +15,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         getAuthUser();
+        // eslint-disable-next-line
     },[])
 
     return (

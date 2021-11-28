@@ -12,6 +12,7 @@ const Header = (props) => {
 
     useEffect(() => {
         getAuthUser();
+        // eslint-disable-next-line
     }, [])
 
     //Props

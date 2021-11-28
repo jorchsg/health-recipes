@@ -46,6 +46,7 @@ const Login = (props) => {
    if (message) {
      showAlert(message.msg, message.category);
    }
+   // eslint-disable-next-line
  }, [authenticated, message, props.history])
 
   return (
