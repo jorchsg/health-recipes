@@ -6,8 +6,9 @@ import './header.scss';
 
 const Header = (props) => {
 
+    //Needed to redirect
     const authContext = useContext(AuthContext);
-    const { getAuthUser, logOut } = authContext;
+    const { getAuthUser } = authContext;
 
     useEffect(() => {
         getAuthUser();
@@ -38,9 +39,7 @@ const Header = (props) => {
                     </div>
                     <div className="header_right_button">
                         <Link to={linkTo}>
-                            <button
-                                //onClick={() => logOut()}
-                            >
+                            <button>
                                 { labelButton }
                             </button>
                         </Link>

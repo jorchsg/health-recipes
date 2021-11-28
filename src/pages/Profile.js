@@ -1,11 +1,12 @@
 import React from 'react';
+import HeaderAuth from '../components/HeaderAuth';
 
 const Profile = () => {
     return (
-        <div>
+        <>
+            <HeaderAuth />
             <h1>Profile Page</h1>
-        </div>
+        </>
     )
 }
-
 export default Profile;

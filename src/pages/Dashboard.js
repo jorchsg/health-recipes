@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from 'react'
-import Header from '../components/Header.js';
 import DailyCalories from '../components/DailyCalories.js';
 import "./dashboard.scss";
 import Card from '../components/Card.js';
@@ -7,11 +6,12 @@ import FoodCard from '../assets/images/food_card.png';
 import { BarChart, Legend, XAxis, YAxis, Tooltip, Bar } from 'recharts';
 import Weeklydata from '../utils/chartData.js';
 import AuthContext from '../context/authentication/authContext.js';
+import HeaderAuth from '../components/HeaderAuth.js';
 
 const Dashboard = () => {
 
     const authContext = useContext(AuthContext);
-    const { getAuthUser, user } = authContext;
+    const { getAuthUser } = authContext;
 
     useEffect(() => {
         getAuthUser();
@@ -19,10 +19,7 @@ const Dashboard = () => {
 
     return (
         <>
-            <Header
-                title={user?.name}
-                labelButton='Log out'
-            />
+            <HeaderAuth />
             <div className="dashboard__content">
                 {/* { user ?  : null} */}
                 <h1 className="dashboard__title reports">Reports</h1>
