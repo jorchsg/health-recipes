@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import DailyCalories from '../components/DailyCalories.js';
 import "./dashboard.scss";
 import Card from '../components/Card.js';
@@ -7,6 +7,7 @@ import { BarChart, Legend, XAxis, YAxis, Tooltip, Bar } from 'recharts';
 import Weeklydata from '../utils/chartData.js';
 import AuthContext from '../context/authentication/authContext.js';
 import HeaderAuth from '../components/HeaderAuth.js';
+import api from '../Api/healthyAPI.js';
 
 const Dashboard = () => {
 
@@ -16,7 +17,12 @@ const Dashboard = () => {
     useEffect(() => {
         getAuthUser();
         // eslint-disable-next-line
-    },[])
+    }, [])
+    
+    useEffect(() => {
+        //api.matchRecipesToDailyCalories(1468, 'day');
+        // eslint-disable-next-line
+    }, [])
 
     return (
         <>
