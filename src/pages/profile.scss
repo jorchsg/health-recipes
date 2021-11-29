@@ -1,0 +1,12 @@
+.profile__content {
+    padding-top: 52px;
+    display: grid;
+    justify-items: start;
+    grid-template-rows: 2;
+    row-gap: 24px;
+    &__row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 16px;
+    }
+}
