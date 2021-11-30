@@ -22,7 +22,7 @@ function Card(props) {
               </div>
             </div>   
             <Btn
-              title="More Details"
+              title="Details"
               icon={CircleIcon}
             />               
           </div>

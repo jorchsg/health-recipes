@@ -1,0 +1,36 @@
+.profile__card__content {
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    width: 284px;
+    height: auto;
+    .head {
+        margin-bottom: 26px;
+        span {
+            color: #AAAAAA;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+        }
+    }
+    .body {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .field {
+        span {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            color: #003049;
+        }
+        p {
+            margin-top: 6px;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 17px;
+            color: #003049;
+        }
+    }
+}

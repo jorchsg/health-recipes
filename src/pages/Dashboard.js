@@ -30,8 +30,8 @@ const Dashboard = () => {
     return (
         <>
             <HeaderAuth />
+            {/* {user ? : null } */}
             <div className="dashboard__content container">
-                {/* { user ?  : null} */}
                 <div className="dashboard__content__stats">
                     <h1>Personal Stats</h1> 
                     <div className="dashboard__content__stats_row">
@@ -40,19 +40,19 @@ const Dashboard = () => {
                             subtitle="300"
                             legend="Calories"
                             meassure="kcal"
-                        />
+                            />
                         <CardStats
                             icon={IconWeight}
                             subtitle={user?.weight}
                             legend="Weight"
                             meassure="kgs"
-                        />
+                            />
                         <CardStats
                             icon={IconHearth}
                             subtitle="20.23"
                             legend="BMI"
                             meassure="kg/m2"
-                        />
+                            />
                     </div>
                 </div>
                 <div className="dashboard__content__cards">
@@ -88,6 +88,7 @@ const Dashboard = () => {
                             class="secondary"
                             title="Add To My Meals"
                             icon={CircleIcon}
+                            with_icon={true}
                         />
                     </div>
                 </div>                                                                                                           

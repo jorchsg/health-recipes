@@ -1,3 +1,9 @@
 .my__meals__content {
     padding-top: 72px;
+    &__summary {
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        gap: 14px;
+    }
 }
