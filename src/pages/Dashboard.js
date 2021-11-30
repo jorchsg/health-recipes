@@ -1,13 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react'
-import DailyCalories from '../components/DailyCalories.js';
+import React, { useContext, useEffect } from 'react'
+import CardStats from '../components/CardStats.js';
 import "./dashboard.scss";
 import Card from '../components/Card.js';
 import FoodCard from '../assets/images/food_card.png';
-import { BarChart, Legend, XAxis, YAxis, Tooltip, Bar } from 'recharts';
-import Weeklydata from '../utils/chartData.js';
 import AuthContext from '../context/authentication/authContext.js';
 import HeaderAuth from '../components/HeaderAuth.js';
-import api from '../Api/healthyAPI.js';
+import Btn from '../components/Btn.js';
+//Icons
+import CircleIcon from "../assets/images/plus-circle.svg";
+import IconKcal from '../assets/images/iconKcal.png'
+import IconWeight from '../assets/images/icon-weight.png'
+import IconHearth from '../assets/images/icon-heart.png'
 
 const Dashboard = () => {
 
@@ -27,74 +30,66 @@ const Dashboard = () => {
     return (
         <>
             <HeaderAuth />
-            <div className="dashboard__content">
+            <div className="dashboard__content container">
                 {/* { user ?  : null} */}
-                <h1 className="dashboard__title reports">Reports</h1>
-                <DailyCalories
-                    calories="300"
-                    subtitle="cal"
-                    legend="Daily calories"
-                />
-                <div className="dashboard__weekly_chart">
-                    <BarChart width={600} height={200} data={Weeklydata}           
-                    margin={{
-                            top: 0,
-                            right: 0,
-                            left: 0,
-                            bottom: 0,
-                            }}
-                    >
-                        <XAxis dataKey="name" />
-                        <YAxis />
-                        <Tooltip />
-                        <Legend />
-                        <Bar dataKey="calories" barSize={20} fill="#F77F00" />
-                    </BarChart> 
+                <div className="dashboard__content__stats">
+                    <h1>Personal Stats</h1> 
+                    <div className="dashboard__content__stats_row">
+                        <CardStats
+                            icon={IconKcal}
+                            subtitle="300"
+                            legend="Calories"
+                            meassure="kcal"
+                        />
+                        <CardStats
+                            icon={IconWeight}
+                            subtitle="80"
+                            legend="Weight"
+                            meassure="kgs"
+                        />
+                        <CardStats
+                            icon={IconHearth}
+                            subtitle="20.23"
+                            legend="BMI"
+                            meassure="kg/m2"
+                        />
+                    </div>
                 </div>
-                <h1 className="dashboard__title suggestions">Suggestions</h1>
-                <div className="dashboard__cards__content">
-                    <Card
-                        image={FoodCard}
-                        title="Eggs with bacon"
-                        category="Breakfast"
-                        calories="346"
-                    />
-                    <Card
-                        image={FoodCard}
-                        title="Eggs with bacon"
-                        category="Breakfast"
-                        calories="346"
-                    />
-                    <Card
-                        image={FoodCard}
-                        title="Eggs with bacon"
-                        category="Breakfast"
-                        calories="346"
-                    />
-                    <Card
-                        image={FoodCard}
-                        title="Eggs with bacon"
-                        category="Breakfast"
-                        calories="346"
-                    />
-                    <Card
-                        image={FoodCard}
-                        title="Eggs with bacon"
-                        category="Breakfast"
-                        calories="346"
-                    />   
-                    <Card
-                        image={FoodCard}
-                        title="Eggs with bacon"
-                        category="Breakfast"
-                        calories="346"
-                    /> 
-                    <Card
-                        image={FoodCard}
-                        title="Eggs with bacon"
-                        category="Breakfast"
-                        calories="346"
-                    />                                           
+                <div className="dashboard__content__cards">
+                    <h1>Daily Meal Suggestion</h1>
+                    <div className="dashboard__content__cards__row">
+                        <Card
+                            image={FoodCard}
+                            title="Eggs with bacon"
+                            category="Breakfast"
+                            calories="346"
+                        />
+                        <Card
+                            image={FoodCard}
+                            title="Eggs with bacon"
+                            category="Breakfast"
+                            calories="346"
+                        />
+                        <Card
+                            image={FoodCard}
+                            title="Eggs with bacon"
+                            category="Breakfast"
+                            calories="346"
+                        />                                   
+                    </div>
+                    <div className="dashboard__content__cards__btnAdd">
+                        <Btn
+                            class="primary"
+                            title="Another Suggestion"
+                            icon={CircleIcon}
+                            type="secondary"
+                        />
+                        <Btn
+                            class="secondary"
+                            title="Add To My Meals"
+                            icon={CircleIcon}
+                        />
+                    </div>
                 </div>                                                                                                           
             </div>
         </>

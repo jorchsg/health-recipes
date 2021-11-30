@@ -11,7 +11,7 @@ const Home = () => {
             <div className="home_page_container">
                 <div className="home_page_content">
                     <div className="home_page_content_left container">
-                        <h1>Recepies that will comein handy for your diet</h1>
+                        <h1>Eat good, feel good, Look Good.</h1>
                         <Link to='/login'>
                             Lets Get Started
                         </Link>

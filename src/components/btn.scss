@@ -1,23 +1,31 @@
-.button {
-  &__content {
-    padding: 10px;
+button {
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  border-radius: 6px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  p {
+    margin-bottom: 0;
+    font-family: 14px;
+    line-height: 17.07px;
+    font-weight: 600;
+  }
+  img {
+    height: 17px;
+    width: 17px;
+  }
+  
+  &.primary {
     background: var(--color-linear);
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    border-radius: 50px;
-    border: none;
-    width: 100%;
-    p {
-      margin-bottom: 0;
-      font-family: 14px;
-      line-height: 17.07px;
-      font-weight: 600;
-    }
-    img {
-      height: 17px;
-      width: 17px;
-    }
   }
 
+  &.secondary {
+    background: var(--color-blue-navy);
+    p {
+      color:white;
+    }
+  }
 }
