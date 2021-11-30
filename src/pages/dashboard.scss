@@ -16,7 +16,8 @@
     &__row {
       margin-top: 28px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, auto);
+      justify-items: start;
       grid-template-rows: auto;
       gap: 24px;
       margin-bottom: 28px;

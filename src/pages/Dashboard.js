@@ -15,7 +15,7 @@ import IconHearth from '../assets/images/icon-heart.png'
 const Dashboard = () => {
 
     const authContext = useContext(AuthContext);
-    const { getAuthUser } = authContext;
+    const { getAuthUser, user } = authContext;
 
     useEffect(() => {
         getAuthUser();
@@ -43,7 +43,7 @@ const Dashboard = () => {
                         />
                         <CardStats
                             icon={IconWeight}
-                            subtitle="80"
+                            subtitle={user?.weight}
                             legend="Weight"
                             meassure="kgs"
                         />
