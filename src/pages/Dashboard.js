@@ -78,6 +78,7 @@ const Dashboard = () => {
                                         title={recipe?.title}
                                         time={recipe?.readyInMinutes}
                                         servings={recipe?.servings}
+                                        imageSrc={recipe?.sourceUrl}
                                     />
                                 );
                             })

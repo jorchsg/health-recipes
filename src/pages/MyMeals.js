@@ -45,7 +45,7 @@ const MyMeals = () => {
                     {
                         myMeals.map((data, index) => {
                             return (
-                                <>
+                                <div className="my__meals__content__summary__row">
                                     {/* <h1>{data?.date}</h1> */}
                                     <CardDetailMeal
                                         key={index}
@@ -64,11 +64,12 @@ const MyMeals = () => {
                                                     title={recipe?.title}
                                                     time={recipe?.ready_in_minutes}
                                                     servings={recipe?.servings}
+                                                    imageSrc={recipe?.image}
                                                 />
                                             )
                                         }))
                                     }
-                                </>
+                                </div>
                             )
                         })
                     }

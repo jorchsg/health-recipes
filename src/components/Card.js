@@ -5,12 +5,14 @@ import CircleIcon from "../assets/images/plus-circle.svg"
 import Btn from './Btn';
 
 function Card(props) {
-  const { image, title, time, servings } = props;
+  const { image, title, time, servings, imageSrc } = props;
     return (
         <>
         <div className="card__content">
           <div className="card__content__image">
-            <img src={image} alt={image}/>
+            <a href={imageSrc} target="_blank" rel='noopener noreferrer'>
+              <img src={image} alt={image}/>
+            </a>
           </div>
           <div className="card__content__container">
             <h2 className="card__title">{title}</h2>
