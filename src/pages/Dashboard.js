@@ -38,7 +38,7 @@ const Dashboard = () => {
         // eslint-disable-next-line
     }, []);
 
-    console.log(dailyMeals)
+    console.log(dailyMeals?.meals)
 
     return (
         <>
@@ -71,20 +71,22 @@ const Dashboard = () => {
                 <div className="dashboard__content__cards">
                     <h1>Daily Meal Suggestion</h1>
                     <div className="dashboard__content__cards__row">
-                        {/* {
-                            dailyMeals.meals.map(recipe => {
-                                return (
-                                    <Card
-                                        key={recipe.id}
-                                        image={FoodCard}
-                                        title={recipe?.title}
-                                        time={recipe?.readyInMinutes}
-                                        servings={recipe?.servings}
-                                        imageSrc={recipe?.sourceUrl}
-                                    />
-                                );
-                            })
-                        }            */}
+                        {
+                            dailyMeals.meals ?
+                                dailyMeals?.meals.map(recipe => {
+                                    return (
+                                        <Card
+                                            key={recipe.id}
+                                            image={FoodCard}
+                                            title={recipe?.title}
+                                            time={recipe?.readyInMinutes}
+                                            servings={recipe?.servings}
+                                            imageSrc={recipe?.sourceUrl}
+                                        />
+                                    );
+                                })
+                            : null
+                        }           
                     </div>
                     <div className="dashboard__content__cards__btnAdd">
                         <Btn
