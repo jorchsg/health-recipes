@@ -15,7 +15,7 @@ function Card(props) {
           <div className="card__content__container">
             <h2 className="card__title">{title}</h2>
             <div className="card__calories-info__content">
-              <h4 className="card__calories-info__content__category">Ready In {time}</h4>
+              <h4 className="card__calories-info__content__category">Ready In {time} mins</h4>
               <div className="card__calories__content">
                 <img src={CalorieIcon} alt={CalorieIcon} />
                 <h4>{servings} servings</h4>

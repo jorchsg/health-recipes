@@ -14,15 +14,13 @@ const matchRecipesToDailyCalories = async (targetCalories, timeFrame) => {
                 'x-rapidapi-key': 'db42bd4e2cmsh79e67a7437d6e45p1b9c09jsn8de802a6c63e'
             }
         });
+        console.log(response.data.meals)
         return response.data.meals;
-        //console.log('Halo', response.data.meals);
-        
+
     } catch (error) {
         console.log(error.response);
     }
 };
-
-//console.log(matchRecipesToDailyCalories(20000,'day'));
 
 const api = {
     matchRecipesToDailyCalories,

@@ -12,6 +12,7 @@ import IconKcal from '../assets/images/iconKcal.png'
 import IconWeight from '../assets/images/icon-weight.png'
 import IconHearth from '../assets/images/icon-heart.png'
 import api from '../Api/healthyAPI.js';
+import apiBack from '../Api/backendAPI.js';
 
 const Dashboard = () => {
 
@@ -23,13 +24,8 @@ const Dashboard = () => {
     const userCalories = user?.health?.calories;
 
     const getMealsByCalories = async () => {
-        console.log('Heeey!..')
         const response = await api.matchRecipesToDailyCalories(userCalories, 'day');
         setDailyMeals(response);
-    };
-
-    const test = async () => {
-        console.log('Helloooowwwwwwww')
     };
 
     useEffect(() => {
@@ -41,8 +37,6 @@ const Dashboard = () => {
         getMealsByCalories();
         // eslint-disable-next-line
     }, []);
-
-    console.log(dailyMeals);
 
     return (
         <>
@@ -98,7 +92,10 @@ const Dashboard = () => {
                             onClick={async () => await test() }
                         />
                         <button onClick={async () => await getMealsByCalories()}>
-                            Click Me
+                            Get Meals
+                        </button>
+                        <button onClick={async () => await apiBack.addMeal(dailyMeals)}>
+                            Add My Meals
                         </button>
                         <Btn
                             class="secondary"
