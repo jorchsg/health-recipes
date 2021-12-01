@@ -38,6 +38,8 @@ const Dashboard = () => {
         // eslint-disable-next-line
     }, []);
 
+    console.log(dailyMeals)
+
     return (
         <>
             <HeaderAuth />
@@ -69,8 +71,8 @@ const Dashboard = () => {
                 <div className="dashboard__content__cards">
                     <h1>Daily Meal Suggestion</h1>
                     <div className="dashboard__content__cards__row">
-                        {
-                            dailyMeals.map(recipe => {
+                        {/* {
+                            dailyMeals.meals.map(recipe => {
                                 return (
                                     <Card
                                         key={recipe.id}
@@ -82,7 +84,7 @@ const Dashboard = () => {
                                     />
                                 );
                             })
-                        }           
+                        }            */}
                     </div>
                     <div className="dashboard__content__cards__btnAdd">
                         <Btn

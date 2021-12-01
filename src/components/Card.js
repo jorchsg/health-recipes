@@ -6,7 +6,8 @@ import Btn from './Btn';
 
 function Card(props) {
   const { image, title, time, servings, imageSrc } = props;
-    return (
+  
+  return (
         <>
         <div className="card__content">
           <div className="card__content__image">
