@@ -37,10 +37,10 @@ const Dashboard = () => {
                     <div className="dashboard__content__stats_row">
                         <CardStats
                             icon={IconKcal}
-                            subtitle="300"
+                            subtitle={user?.health?.calories}
                             legend="Calories"
                             meassure="kcal"
-                            />
+                        />
                         <CardStats
                             icon={IconWeight}
                             subtitle={user?.weight}
@@ -49,10 +49,10 @@ const Dashboard = () => {
                             />
                         <CardStats
                             icon={IconHearth}
-                            subtitle="20.23"
+                            subtitle={user?.health?.imc}
                             legend="BMI"
                             meassure="kg/m2"
-                            />
+                        />
                     </div>
                 </div>
                 <div className="dashboard__content__cards">
