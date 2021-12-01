@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import HeaderAuth from '../components/HeaderAuth';
 import CardDetailMeal from '../components/meals/CardDetailMeal';
-import Card from '../components/Card';
 import axios from 'axios';
 import FoodCard from '../assets/images/food_card.png';
 import './myMeals.scss';
@@ -25,8 +24,8 @@ const MyMeals = () => {
             //console.log('Yeah', response.data.data);
             const userMeals = response.data.data;
             setMyMeals(userMeals);
-            console.log(userMeals[0].meals);
-            const dailyMeal = userMeals.meals[0].map((meal => {
+            //console.log(userMeals[0].meals);
+            /* const dailyMeal = userMeals.meals[0].map((meal => {
                 return ({
                     id: meal.id,
                     image: meal.image,
@@ -35,14 +34,14 @@ const MyMeals = () => {
                     title: meal.title
                 });
             }));
-            setDailyMeals(dailyMeal);
+            setDailyMeals(dailyMeal); */
         } catch (error) {
             console.error('Oh no', error.response);
         }
     }
 
     //console.log('My Meals: ', myMeals);
-    console.log('Daily Meals', dailyMeals);
+    //console.log('Daily Meals', dailyMeals);
 
     useEffect(() => {
         getAllMyMeals();
@@ -68,18 +67,6 @@ const MyMeals = () => {
                             )
                         })
                     }
-                    {/* {
-                        data.map((meal) => {
-                            return (
-                                <Card
-                                    image={FoodCard}
-                                    title="Eggs with bacon"
-                                    category="Breakfast"
-                                    calories="346"
-                                />
-                            )
-                        })
-                    } */}
                 </div>
                 <div className="my__meals__content__meal">
 

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import CardStats from '../components/CardStats.js';
 import "./dashboard.scss";
 import Card from '../components/Card.js';
@@ -11,21 +11,33 @@ import CircleIcon from "../assets/images/plus-circle.svg";
 import IconKcal from '../assets/images/iconKcal.png'
 import IconWeight from '../assets/images/icon-weight.png'
 import IconHearth from '../assets/images/icon-heart.png'
+import api from '../Api/healthyAPI.js';
 
 const Dashboard = () => {
 
     const authContext = useContext(AuthContext);
     const { getAuthUser, user } = authContext;
 
+    const [dailyMeals, setDailyMeals] = useState([]);
+
+    const userCalories = user?.health?.calories;
+
+    const getMealsByCalories = async () => {
+        const response = await api.matchRecipesToDailyCalories(userCalories, 'day');
+        setDailyMeals(response);
+    };
+
     useEffect(() => {
         getAuthUser();
         // eslint-disable-next-line
     }, [])
     
-    useEffect(() => {
-        //api.matchRecipesToDailyCalories(1468, 'day');
+    useEffect( () => {
+        getMealsByCalories();
         // eslint-disable-next-line
     }, [])
+
+    console.log(dailyMeals);
 
     return (
         <>
@@ -58,24 +70,19 @@ const Dashboard = () => {
                 <div className="dashboard__content__cards">
                     <h1>Daily Meal Suggestion</h1>
                     <div className="dashboard__content__cards__row">
-                        <Card
-                            image={FoodCard}
-                            title="Eggs with bacon"
-                            category="Breakfast"
-                            calories="346"
-                        />
-                        <Card
-                            image={FoodCard}
-                            title="Eggs with bacon"
-                            category="Breakfast"
-                            calories="346"
-                        />
-                        <Card
-                            image={FoodCard}
-                            title="Eggs with bacon"
-                            category="Breakfast"
-                            calories="346"
-                        />                                   
+                        {
+                            dailyMeals.map(recipe => {
+                                return (
+                                    <Card
+                                        key={recipe.id}
+                                        image={FoodCard}
+                                        title={recipe?.title}
+                                        time={recipe?.readyInMinutes}
+                                        servings={recipe?.servings}
+                                    />
+                                );
+                            })
+                        }           
                     </div>
                     <div className="dashboard__content__cards__btnAdd">
                         <Btn
@@ -83,6 +90,7 @@ const Dashboard = () => {
                             title="Another Suggestion"
                             icon={CircleIcon}
                             type="secondary"
+                            onCLick={ async () => await getMealsByCalories()}
                         />
                         <Btn
                             class="secondary"
