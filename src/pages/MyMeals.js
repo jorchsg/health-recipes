@@ -62,7 +62,7 @@ const MyMeals = () => {
                                                     key={recipe.id}
                                                     image={FoodCard}
                                                     title={recipe?.title}
-                                                    time={recipe?.readyInMinutes}
+                                                    time={recipe?.ready_in_minutes}
                                                     servings={recipe?.servings}
                                                 />
                                             )
