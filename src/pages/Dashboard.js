@@ -23,8 +23,13 @@ const Dashboard = () => {
     const userCalories = user?.health?.calories;
 
     const getMealsByCalories = async () => {
+        console.log('Heeey!..')
         const response = await api.matchRecipesToDailyCalories(userCalories, 'day');
         setDailyMeals(response);
+    };
+
+    const test = async () => {
+        console.log('Helloooowwwwwwww')
     };
 
     useEffect(() => {
@@ -32,10 +37,10 @@ const Dashboard = () => {
         // eslint-disable-next-line
     }, [])
     
-    useEffect( () => {
+    useEffect(() => {
         getMealsByCalories();
         // eslint-disable-next-line
-    }, [])
+    }, []);
 
     console.log(dailyMeals);
 
@@ -90,8 +95,11 @@ const Dashboard = () => {
                             title="Another Suggestion"
                             icon={CircleIcon}
                             type="secondary"
-                            onCLick={ async () => await getMealsByCalories()}
+                            onClick={async () => await test() }
                         />
+                        <button onClick={async () => await getMealsByCalories()}>
+                            Click Me
+                        </button>
                         <Btn
                             class="secondary"
                             title="Add To My Meals"
