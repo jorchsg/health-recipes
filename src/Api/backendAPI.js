@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 const url = process.env.REACT_APP_BACKEND_URL
+const token = localStorage.getItem('token');
 
 const addMeal = async meals => {
-    const token = localStorage.getItem('token');
     try {
         const response = await axios.post(`${url}my_meals/createMeal`, meals, {
             headers: {
@@ -18,7 +18,6 @@ const addMeal = async meals => {
 };
 
 const deleteMealById = async id => {
-    const token = localStorage.getItem('token');
     try {
         const response = await axios.delete(`${url}my_meals/deleteMeal/${id}`, {
             headers: {

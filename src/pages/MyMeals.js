@@ -21,7 +21,7 @@ const MyMeals = () => {
                     "Authorization": `Bearer ${token}`
                 }
             });
-            console.log('Yeah', response.data.data);
+            //console.log('Yeah', response.data.data);
             const userMeals = response.data.data;
             setMyMeals(userMeals);
         } catch (error) {
