@@ -45,10 +45,10 @@ const Profile = () => {
                         />
                     </div>
                 </div>
-                <button
+{/*                 <button
                     className="button-default"
                     onClick={toggle}>Show Modal
-                </button>
+                </button> */}
                 <Modal
                     isShowing={isShowing}
                     hide={toggle}
