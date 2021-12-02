@@ -10,8 +10,8 @@ const addMeal = async meals => {
                 "Authorization": `Bearer ${token}`
             }
         });
-        //return response.data.meals;
         console.log('Posted', response.data);
+        return response.data.meals;
     } catch (error) {
         console.error('Noooo', error);
     }
@@ -24,8 +24,8 @@ const deleteMealById = async id => {
                 "Authorization": `Bearer ${token}`
             }
         });
-        //return response.data.meals;
         console.log('Deleted', response.data);
+        return response.data.meals;
     } catch (error) {
         console.error('Noooo', error);
     }

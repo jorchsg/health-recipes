@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import HeaderAuth from '../components/HeaderAuth';
 import CardDetailMeal from '../components/meals/CardDetailMeal';
-import axios from 'axios';
 import FoodCard from '../assets/images/food_card.png';
+import Card from '../components/Card'; 
+import axios from 'axios';
+import moment from 'moment';
 import './myMeals.scss';
-import Card from '../components/Card';
 
 
 const MyMeals = () => {
@@ -46,7 +47,7 @@ const MyMeals = () => {
                         myMeals.map((data) => {
                             return (
                                 <>
-                                    <h1>{data.date.split('T')[0]}</h1>
+                                    <h1>{moment(data.date.split('T')[0]).format("MMM Do YY")}</h1>
                                     <div className="my__meals__content__summary__row">
                                         <CardDetailMeal
                                             key={data?.id_meal}
