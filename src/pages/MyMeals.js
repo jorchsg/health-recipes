@@ -45,31 +45,33 @@ const MyMeals = () => {
                     {
                         myMeals.map((data, index) => {
                             return (
-                                <div className="my__meals__content__summary__row">
-                                    {/* <h1>{data?.date}</h1> */}
-                                    <CardDetailMeal
-                                        key={index}
-                                        title={'Summary Info'}
-                                        textOne={data?.calories}
-                                        textTwo={data?.carbohydrates}
-                                        textThree={data?.fat}
-                                        textFourth={data?.protein}
-                                    />
-                                    {
-                                        data.meals.map((recipe => {
-                                            return (
-                                                <Card
-                                                    key={recipe.id}
-                                                    image={FoodCard}
-                                                    title={recipe?.title}
-                                                    time={recipe?.ready_in_minutes}
-                                                    servings={recipe?.servings}
-                                                    imageSrc={recipe?.image}
-                                                />
-                                            )
-                                        }))
-                                    }
-                                </div>
+                                <>
+                                    <h1>{data.date.split('T')[0]}</h1>
+                                    <div className="my__meals__content__summary__row">
+                                        <CardDetailMeal
+                                            key={index}
+                                            title={'Summary Info'}
+                                            textOne={data?.calories}
+                                            textTwo={data?.carbohydrates}
+                                            textThree={data?.fat}
+                                            textFourth={data?.protein}
+                                        />
+                                        {
+                                            data.meals.map((recipe => {
+                                                return (
+                                                    <Card
+                                                        key={recipe.id}
+                                                        image={FoodCard}
+                                                        title={recipe?.title}
+                                                        time={recipe?.ready_in_minutes}
+                                                        servings={recipe?.servings}
+                                                        imageSrc={recipe?.image}
+                                                    />
+                                                )
+                                            }))
+                                        }
+                                    </div>
+                                </>
                             )
                         })
                     }
