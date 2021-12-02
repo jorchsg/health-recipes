@@ -29,7 +29,7 @@ const MyMeals = () => {
         }
     }
 
-    //console.log('My Meals: ', myMeals);
+    //console.log('My Meals: ', myMeals.length );
     //console.log('Daily Meals', dailyMeals);
 
     useEffect(() => {
@@ -40,21 +40,22 @@ const MyMeals = () => {
         <>
             <HeaderAuth />
             <div className="my__meals__content container">
-                <h1>Summary</h1>
+                <h1> Summary ( {myMeals.length} )</h1>
                 <div className="my__meals__content__summary">
                     {
-                        myMeals.map((data, index) => {
+                        myMeals.map((data) => {
                             return (
                                 <>
                                     <h1>{data.date.split('T')[0]}</h1>
                                     <div className="my__meals__content__summary__row">
                                         <CardDetailMeal
-                                            key={index}
+                                            key={data?.id_meal}
                                             title={'Summary Info'}
                                             textOne={data?.calories}
                                             textTwo={data?.carbohydrates}
                                             textThree={data?.fat}
                                             textFourth={data?.protein}
+                                            mealId={data?.id_meal}
                                         />
                                         {
                                             data.meals.map((recipe => {

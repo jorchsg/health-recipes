@@ -17,8 +17,24 @@ const addMeal = async meals => {
     }
 };
 
+const deleteMealById = async id => {
+    const token = localStorage.getItem('token');
+    try {
+        const response = await axios.delete(`${url}my_meals/deleteMeal/${id}`, {
+            headers: {
+                "Authorization": `Bearer ${token}`
+            }
+        });
+        //return response.data.meals;
+        console.log('Deleted', response.data);
+    } catch (error) {
+        console.error('Noooo', error);
+    }
+};
+
 const apiBack = {
-    addMeal
+    addMeal,
+    deleteMealById
 }
 
 export default apiBack;

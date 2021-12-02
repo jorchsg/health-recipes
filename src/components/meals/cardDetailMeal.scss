@@ -5,12 +5,21 @@
     width: 284px;
     height: auto;
     .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         margin-bottom: 26px;
         span {
             color: #AAAAAA;
             font-weight: bold;
             font-size: 12px;
             line-height: 15px;
+        }
+        .delete {
+            cursor: pointer;
+            span {
+                color: red;
+            }
         }
     }
     .body {
