@@ -7,11 +7,15 @@ function Btn(props) {
     type = 'primary',
     with_icon = false,
     icon,
+    action,
   } = props;
     return (
       <>
-        <button className={`${type}`}>
-          <p className="cbutton__title">{title}</p>
+        <button
+          className={`${type}`}
+          onClick={action}
+        >
+          <p className="button__title">{title}</p>
           {
             with_icon ?
             <img src={icon} alt={icon} className="button__image"/>

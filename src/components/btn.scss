@@ -7,11 +7,14 @@ button {
   border: none;
   width: 100%;
   cursor: pointer;
+  height: 42px;
+  text-align: center;
+  align-items: center;
   p {
     margin-bottom: 0;
-    font-family: 14px;
-    line-height: 17.07px;
-    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 700;
   }
   img {
     height: 17px;

@@ -38,8 +38,6 @@ const Dashboard = () => {
         // eslint-disable-next-line
     }, []);
 
-    console.log(dailyMeals?.meals)
-
     return (
         <>
             <HeaderAuth />
@@ -90,23 +88,17 @@ const Dashboard = () => {
                     </div>
                     <div className="dashboard__content__cards__btnAdd">
                         <Btn
-                            class="primary"
+                            type="secondary"
                             title="Another Suggestion"
                             icon={CircleIcon}
-                            type="secondary"
-                            onClick={async () => await test() }
+                            action={async () => await getMealsByCalories()}
                         />
-                        <button onClick={async () => await getMealsByCalories()}>
-                            Get Meals
-                        </button>
-                        <button onClick={async () => await apiBack.addMeal(dailyMeals)}>
-                            Add My Meals
-                        </button>
                         <Btn
-                            class="secondary"
+                            type="primary"
                             title="Add To My Meals"
                             icon={CircleIcon}
                             with_icon={true}
+                            action={async () => await apiBack.addMeal(dailyMeals)}
                         />
                     </div>
                 </div>                                                                                                           
