@@ -12,6 +12,7 @@ import Login from './pages/Login.js';
 import MyMeals from './pages/MyMeals.js';
 import Dashboard from './pages/Dashboard.js';
 import Profile from './pages/Profile.js';
+import Page404 from './pages/404.js';
 
 //Global States
 import AlertState from './context/alerts/alertState';
@@ -40,6 +41,7 @@ function App() {
               <PrivateRoute path="/dashboard" exact component={Dashboard}></PrivateRoute>
               <PrivateRoute path="/my-meals" exact component={MyMeals}></PrivateRoute>
               <PrivateRoute path="/profile" exact component={Profile}></PrivateRoute>
+              <Route component={Page404}></Route>
             </Switch>
           </Router>
         </AuthState>
